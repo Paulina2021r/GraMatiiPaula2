@@ -34,9 +34,10 @@ def autko1(x, y):
 #autko2
 autoblue = pygame.image.load('zdjecia\carblue1.png')
 pygame.display.set_icon(icon)
-blueX = 100
-blueY = 120
-Speedcar2 = 0
+blueX = 10
+blueY = 450
+SpeedcarX = 0
+SpeedcarY = 0
 def autko2(x, y):
     screen.blit(autoblue, (x, y))
 
@@ -60,6 +61,25 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_RIGHT:
+            SpeedcarX = 0.3
+        if event.key == pygame.K_LEFT:
+            SpeedcarX = -0.3
+        if event.key == pygame.K_UP:
+            SpeedcarY = -0.3
+        if event.key == pygame.K_DOWN:
+            SpeedcarY = 0.3
+
+    if event.type == pygame.KEYUP:
+        if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+            SpeedcarX = 0
+        if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
+            SpeedcarY = 0
+
+    blueX += SpeedcarX
+    blueY += SpeedcarY
 
 
 
