@@ -44,6 +44,15 @@ SpeedcarY = 0
 def autko2(x, y):
     screen.blit(autoblue, (x, y))
 
+#meta pygame
+meta_Pygame = pygame.image.load('zdjecia\Bez-nazwy-1.png')
+pygame.display.set_icon(icon)
+meta_PygameX = 3770
+meta_PygameY = 0
+SpeedMeta_Pygame = 0
+def ShowMeta (x, y):
+    screen.blit(meta_Pygame, (x, y))
+
 
 
 
@@ -66,8 +75,12 @@ while running:
     if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_RIGHT:
             SpeedMetaX = -0.3
+            SpeedcarX = 0.06
+            SpeedMeta_Pygame = -0.3
         if event.key == pygame.K_LEFT:
             SpeedMetaX = 0.3
+            SpeedcarX = - 0.06
+            SpeedMeta_Pygame = 0.3
         if event.key == pygame.K_UP:
             SpeedcarY = -0.3
         if event.key == pygame.K_DOWN:
@@ -76,9 +89,14 @@ while running:
     if event.type == pygame.KEYUP:
         if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
             SpeedMetaX = 0
+            SpeedMeta_Pygame = 0
         if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
             SpeedcarY = 0
+            SpeedMeta_Pygame = 0
 
+
+
+    meta_PygameX += SpeedMeta_Pygame
     metaX += SpeedMetaX
     blueY += SpeedcarY
 
@@ -87,6 +105,11 @@ while running:
     meta(metaX, metaY)
     autko1(redX, redY)
     autko2(blueX, blueY)
+    ShowMeta(meta_PygameX, meta_PygameY)
+
+
+
+
 
     # koncowka
     pygame.display.update()
