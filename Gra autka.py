@@ -81,6 +81,7 @@ while running:
             SpeedMetaX = 0.3
             SpeedcarX = - 0.06
             SpeedMeta_Pygame = 0.3
+
         if event.key == pygame.K_UP:
             SpeedcarY = -0.3
         if event.key == pygame.K_DOWN:
@@ -90,15 +91,23 @@ while running:
         if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
             SpeedMetaX = 0
             SpeedMeta_Pygame = 0
+            SpeedcarX = 0
         if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
             SpeedcarY = 0
             SpeedMeta_Pygame = 0
 
 
 
-    meta_PygameX += SpeedMeta_Pygame
-    metaX += SpeedMetaX
-    blueY += SpeedcarY
+    if blueX <  650:
+        meta_PygameX += SpeedMeta_Pygame
+        metaX += SpeedMetaX
+        blueY += SpeedcarY
+        blueX += SpeedcarX
+    elif blueX >= 650:
+        SpeedcarX = 0
+        SpeedMeta_Pygame = 0
+        SpeedMetaX = 0
+        SpeedcarY = 0
 
 
 
@@ -106,6 +115,8 @@ while running:
     autko1(redX, redY)
     autko2(blueX, blueY)
     ShowMeta(meta_PygameX, meta_PygameY)
+
+
 
 
 
