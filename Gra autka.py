@@ -111,6 +111,21 @@ while running:
 
 
 
+
+
+
+    # ogranicz obszar gry
+    if blueX <= 0:
+        blueX = 0
+    elif blueX >= 736:  #736
+        bluerX = 736
+
+    if blueY >= 0:  # spróbuj 600
+        blueY = 0
+    elif blueY <= 250:  #536 - to do samej góry by było
+        blueY = 250
+
+
     meta(metaX, metaY)
     autko1(redX, redY)
     autko2(blueX, blueY)
