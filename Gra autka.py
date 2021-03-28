@@ -120,8 +120,8 @@ while running:
     elif blueX >= 736:  #736
         bluerX = 736
 
-    if blueY >= 0:  # spróbuj 600
-        blueY = 0
+    if blueY >= 550:  # spróbuj 600
+        blueY = 550
     elif blueY <= 250:  #536 - to do samej góry by było
         blueY = 250
 
