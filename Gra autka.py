@@ -131,7 +131,7 @@ while running:
     autko2(blueX, blueY)
     ShowMeta(meta_PygameX, meta_PygameY)
 
-
+#
 
 
 
