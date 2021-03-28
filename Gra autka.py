@@ -18,10 +18,13 @@ icon = pygame.image.load('zdjecia/tyre.png')
 pygame.display.set_icon(icon)
 
 #meta i start
-meta_start = pygame.image.load('zdjecia\Bez-nazwy-2.png')
+meta_start = pygame.image.load('zdjecia\metastart50.png')
 pygame.display.set_icon(icon)
 metaX = 0
 metaY = 0
+SpeedMetaX = 0
+def meta(x, y):
+    screen.blit(meta_start, (x, y))
 
 # autko1 red
 autored = pygame.image.load('zdjecia\carobrotony1.png')
@@ -43,9 +46,7 @@ def autko2(x, y):
 
 
 
-#meta
-def meta(x, y):
-    screen.blit(meta_start, (x, y))
+
 
 
 running = True
@@ -64,9 +65,9 @@ while running:
 
     if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_RIGHT:
-            SpeedcarX = 0.3
+            SpeedMetaX = -0.3
         if event.key == pygame.K_LEFT:
-            SpeedcarX = -0.3
+            SpeedMetaX = 0.3
         if event.key == pygame.K_UP:
             SpeedcarY = -0.3
         if event.key == pygame.K_DOWN:
@@ -74,11 +75,11 @@ while running:
 
     if event.type == pygame.KEYUP:
         if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-            SpeedcarX = 0
+            SpeedMetaX = 0
         if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
             SpeedcarY = 0
 
-    blueX += SpeedcarX
+    metaX += SpeedMetaX
     blueY += SpeedcarY
 
 
