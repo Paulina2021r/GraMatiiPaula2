@@ -18,7 +18,7 @@ icon = pygame.image.load('zdjecia/tyre.png')
 pygame.display.set_icon(icon)
 
 #meta i start
-meta_start = pygame.image.load('zdjecia\metastart50.png')
+meta_start = pygame.image.load('zdjecia\metastart51edit111.png')
 pygame.display.set_icon(icon)
 metaX = 0
 metaY = 0
@@ -74,12 +74,12 @@ while running:
     if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_RIGHT:
             SpeedMetaX = -0.3
-            SpeedcarX = 0.06
-            SpeedMeta_Pygame = -0.3
+            SpeedcarX = 0.05
+            #SpeedMeta_Pygame = -0.3
             #RUCH AUTKA KOMPUTERA
             idk = random.randint(4, 5)
             idk /= 100
-            Speedcar1 = idk
+            Speedcar1 = 0 #idk
             redY += 0.001
 
         if event.key == pygame.K_UP:
@@ -89,35 +89,35 @@ while running:
 
     if event.type == pygame.KEYUP:
         if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-            SpeedMetaX = 0
-            SpeedMeta_Pygame = 0
+            SpeedMetaX = -0 #-0.25
+            #SpeedMeta_Pygame = 0.25
             SpeedcarX = 0
-            Speedcar1 = 0.04
+            Speedcar1 = 0.05
         if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
             SpeedcarY = 0
-            SpeedMeta_Pygame = 0
+            #SpeedMeta_Pygame = 0
 
 
 
 
-    if redX >= 650:
+    if redX >= 540:
         SpeedcarX = 0
-        SpeedMeta_Pygame = 0
+        # SpeedMeta_Pygame = 0
         SpeedMetaX = 0
         SpeedcarY = 0
         Speedcar1 = 0
 
 
 
-    if blueX <  650:
-        meta_PygameX += SpeedMeta_Pygame
+    if blueX <  540:  #w oryginale jest na 650
+        #meta_PygameX += SpeedMeta_Pygame
         metaX += SpeedMetaX
         blueY += SpeedcarY
         blueX += SpeedcarX
         redX += Speedcar1
-    elif blueX >= 650:
+    elif blueX >= 540:  # w oryginale jest na 650
         SpeedcarX = 0
-        SpeedMeta_Pygame = 0
+        #SpeedMeta_Pygame = 0
         SpeedMetaX = 0
         SpeedcarY = 0
         Speedcar1 = 0
