@@ -64,7 +64,9 @@ while running:
     # tło ekranu
     screen.fill((184, 225, 233))  # Red Green Blue 0-->255
 
-
+    # RUCH AUTKA KOMPUTERA
+    redX += random.randint(1, 2) /10
+    redY += 0.001
 
 
     for event in pygame.event.get():
