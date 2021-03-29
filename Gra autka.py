@@ -77,7 +77,9 @@ while running:
             SpeedcarX = 0.06
             SpeedMeta_Pygame = -0.3
             #RUCH AUTKA KOMPUTERA
-            Speedcar1 = 0.01
+            idk = random.randint(4, 5)
+            idk /= 100
+            Speedcar1 = idk
             redY += 0.001
 
         if event.key == pygame.K_UP:
@@ -90,7 +92,7 @@ while running:
             SpeedMetaX = 0
             SpeedMeta_Pygame = 0
             SpeedcarX = 0
-            Speedcar1 = 0.05
+            Speedcar1 = 0.04
         if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
             SpeedcarY = 0
             SpeedMeta_Pygame = 0
