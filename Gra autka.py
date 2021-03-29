@@ -77,10 +77,7 @@ while running:
             SpeedMetaX = -0.3
             SpeedcarX = 0.06
             SpeedMeta_Pygame = -0.3
-        if event.key == pygame.K_LEFT:
-            SpeedMetaX = 0.3
-            SpeedcarX = - 0.06
-            SpeedMeta_Pygame = 0.3
+
 
         if event.key == pygame.K_UP:
             SpeedcarY = -0.3
